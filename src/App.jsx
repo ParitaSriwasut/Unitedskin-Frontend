@@ -1,9 +1,12 @@
-// import LandingPage from "./pages/LandingPage";
-// import Register from "./pages/Register";
-import Login from "../src/pages/Login"
+
+import Route from "./router/Route";
 
 function App() {
-  return <Login/>
+  return (
+    <div>
+      <Route />
+    </div>
+  )
 }
 
 export default App;

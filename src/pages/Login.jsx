@@ -1,23 +1,46 @@
-import myImage from "../images/login-1.png";
+import { useState } from 'react';
+// import { toast } from 'react-toastify';
+import myImage from "../images/login-2.png";
+import LoginInput from "../features/auth/LoginInput"
+import { useAuth } from '../hooks/use-auth';
 
-export default function Register() {
+export default function Login()
+{
+  const [input, setInput] = useState({
+    username: '',
+    password: ''
+  });
+
+  const { login } = useAuth();
+
+  const handleSubmitForm = e => {
+    e.preventDefault();
+    login(input).catch(err => {
+      // toast.error(err.response.data.message);
+      console.log(err);
+    });
+  };
+
   return (
     <div className="flex bg-white">
       <div className="flex flex-1 item-center justify-center mt-[300px]">
         <div className="flex item-center h-fit">
-          <form className="h-fit">
-              <input
-                className="bg-gray-200 appearance-none border-2 border-gray-100 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
-                type="text"
-                placeholder="username"
+          <form className="h-fit" onSubmit={handleSubmitForm}>
+              <LoginInput
+              type='text'
+              placeholder="username"
+              value={input.username}
+              onChange={e => setInput({ ...input, username: e.target.value })}
+            />
+            <div className="pt-4"></div>
+            <LoginInput 
+              placeholder="password"
+              type='password'
+              value={input.password}
+              onChange={e => setInput({ ...input, password: e.target.value })}
               />
-              <input
-                className="bg-gray-200 appearance-none border-2 border-gray-100 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
-                type="password"
-                placeholder="password"
-              />
-            <div className="pt-6 flex justify-center">
-              <button className="bg-green text-orange rounded-lg text-md font-semibold py-2 px-7 ">
+            <div className="pt-4 flex justify-center">
+              <button className="bg-green text-orange rounded-lg text-md font-semibold py-2 px-20 ">
                 log in
               </button>
             </div>
