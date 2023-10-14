@@ -4,8 +4,8 @@ import { Outlet } from "react-router-dom";
 export default function Layout() {
   return (
     <div>
-      {/* <LandingPage/> */}
-      <Outlet/>
+      {/* <LandingPage /> */}
+      <Outlet />
     </div>
-  )
+  );
 }
