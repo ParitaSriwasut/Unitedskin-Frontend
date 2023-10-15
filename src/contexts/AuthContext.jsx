@@ -11,15 +11,17 @@ import { useEffect } from "react";
 export const AuthContext = createContext();
 
 export default function AuthContextProvider({ children }) {
-  const [authUser, setAuthUser] = useState(null);
   const [initialLoading, setInitialLoading] = useState(true);
+  const [authUser, setAuthUser] = useState(null);
+  //const [checkUser, setCheckUser] = useState(null);
 
   useEffect(() => {
     if (getAccessToken()) {
       axios
-        .get("/auth/me")
-        .then((res) => {
-          setAuthUser(res.data.user);
+        .get("/me")
+        .then((result) => {
+          setAuthUser(result.data.user);
+          console.log(result.data.user.role);
         })
         .finally(() => {
           setInitialLoading(false);
@@ -35,8 +37,8 @@ export default function AuthContextProvider({ children }) {
     setAuthUser(res.data.user);
   };
 
-  const register = async (registerInputObject) => {
-    const res = await axios.post("/register", registerInputObject);
+  const register = async (registerInputObj) => {
+    const res = await axios.post("/register", registerInputObj);
     addAccessToken(res.data.accessToken);
     setAuthUser(res.data.user);
   };
@@ -50,16 +52,14 @@ export default function AuthContextProvider({ children }) {
   //   const res = await axios.patch('/user', data);
   //   setAuthUser({ ...authUser, ...res.data });
   // };
-  console.log(authUser);
+
   return (
     <AuthContext.Provider
       value={{
         login,
         authUser,
-        initialLoading,
         register,
         logout,
-        // updateProfile
       }}
     >
       {children}

@@ -6,7 +6,7 @@ import { useAuth } from "../../hooks/use-auth";
 export default function HomeNavbar() {
   const { checkUser, logout } = useAuth();
   return (
-    <div className="bg-gray-200">
+    <div className="bg-neutral z-50">
       <div className="container mx-auto">
         <nav className="flex justify-between items-center py-4">
           <Link to="/home" className="flex items-center">

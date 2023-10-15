@@ -1,9 +1,11 @@
-import HomeLayout from "../layout/HomeLayout";
+import HomeContent from "../components/content/HomeContent";
+import HomeHeader from "../components/header/HomeHeader";
 
 export default function Home() {
   return (
     <div>
-      <HomeLayout />
+      <HomeHeader />
+      <HomeContent />
     </div>
   );
 }

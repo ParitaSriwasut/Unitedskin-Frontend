@@ -1,10 +1,9 @@
-//Header.jsx
 import myHero from "../../images/Hero1.png";
-export default function Header() {
+export default function HomeHeader() {
   return (
-    <div className="w-screen fixed -z-10 h-screen top-0">
+    <div className="w-screen  -z-10 h-screen top-0">
       <img
-        className="absolute inset-0 w-full h-full object-cover"
+        className="s inset-0 w-full h-full object-cover"
         alt="hero"
         src={myHero}
       />
