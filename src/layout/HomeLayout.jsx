@@ -1,15 +1,17 @@
 import { Outlet } from "react-router-dom";
-import Header from "../features/homepage/Header";
-import HomeNavbar from "../features/homepage/HomeNavbar";
-import HomeBody from "../features/homepage/HomeBody";
+import HomeNavBar from "../components/navbar/HomeNavbar";
+import HomeHeader from "../components/header/HomeHeader";
+import HomeFooter from "../components/footer/HomeFooter";
+import HomeContent from "../components/content/HomeContent";
 
-export default function HomeLayout() {
+export default function Layout() {
   return (
-    <div>
-      <HomeNavbar />
-      <Header />
-      <HomeBody />
+    <>
+      <HomeNavBar />
+      <HomeHeader />
+      <HomeContent />
+      <HomeFooter />
       <Outlet />
-    </div>
+    </>
   );
 }

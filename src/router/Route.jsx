@@ -3,7 +3,6 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { RouterProvider } from "react-router-dom";
 import LandingPage from "../pages/LandingPage";
-import Layout from "../layout/Layout";
 import HomeLayout from "../layout/HomeLayout";
 // import RedirectIfAuthenticated from "../features/auth/RedirectIfAuthenticated";
 import Authenticated from "../features/auth/Authenticated";
@@ -13,19 +12,18 @@ import AdminPage from "../pages/AdminPage";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <HomeLayout />,
     children: [
-      { path: "/", element: <LandingPage /> },
+      { path: "/", element: <Home /> },
       { path: "/login", element: <Login /> },
-      { path: "register", element: <Register /> },
-      { path: "home", element: <Home /> },
+      { path: "/register", element: <Register /> },
     ],
   },
   {
-    path: "/user",
+    path: "/welcome",
     element: (
       <Authenticated>
-        <HomeLayout />,
+        <LandingPage />,
       </Authenticated>
     ),
   },

@@ -1,13 +1,9 @@
-import Header from "../features/homepage/Header";
-import HomeNavbar from "../features/homepage/HomeNavbar";
-import HomeBody from "../features/homepage/HomeBody";
+import HomeLayout from "../layout/HomeLayout";
 
 export default function Home() {
   return (
     <div>
-      <Header />
-      <HomeNavbar />
-      <HomeBody />
+      <HomeLayout />
     </div>
   );
 }

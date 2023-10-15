@@ -51,14 +51,14 @@ export default function HomeNavbar() {
             {checkUser ? (
               <Link
                 to="/"
-                className=" dark:text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
+                className=" text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
               >
                 Welcome {checkUser.first_name}
               </Link>
             ) : (
               <Link
                 to="/login"
-                className="dark:text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
+                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
               >
                 Log in
               </Link>
@@ -67,7 +67,7 @@ export default function HomeNavbar() {
             {checkUser ? (
               <Link
                 to="/"
-                className=" dark:text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none"
+                className=" text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none"
                 onClick={logout}
               >
                 Log out
