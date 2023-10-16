@@ -13,12 +13,12 @@ export const AuthContext = createContext();
 export default function AuthContextProvider({ children }) {
   const [initialLoading, setInitialLoading] = useState(true);
   const [authUser, setAuthUser] = useState(null);
-  //const [checkUser, setCheckUser] = useState(null);
+  // const [checkUser, setCheckUser] = useState(null);
 
   useEffect(() => {
     if (getAccessToken()) {
       axios
-        .get("/me")
+        .get("/auth/me")
         .then((result) => {
           setAuthUser(result.data.user);
           console.log(result.data.user.role);
@@ -32,13 +32,14 @@ export default function AuthContextProvider({ children }) {
   }, []);
 
   const login = async (credential) => {
-    const res = await axios.post("/login", credential);
+    const res = await axios.post("/auth/login", credential);
+    console.log(res.data.accessToken);
     addAccessToken(res.data.accessToken);
     setAuthUser(res.data.user);
   };
 
   const register = async (registerInputObj) => {
-    const res = await axios.post("/register", registerInputObj);
+    const res = await axios.post("/auth/register", registerInputObj);
     addAccessToken(res.data.accessToken);
     setAuthUser(res.data.user);
   };
@@ -60,6 +61,7 @@ export default function AuthContextProvider({ children }) {
         authUser,
         register,
         logout,
+        initialLoading,
       }}
     >
       {children}

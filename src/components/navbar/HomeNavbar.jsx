@@ -4,7 +4,7 @@ import myLogo from "../../assets/logo/Logo-2.png";
 import { useAuth } from "../../hooks/use-auth";
 
 export default function HomeNavbar() {
-  const { checkUser, logout } = useAuth();
+  const { authUser, logout } = useAuth();
   return (
     <div className="bg-neutral z-50">
       <div className="container mx-auto">
@@ -16,7 +16,7 @@ export default function HomeNavbar() {
             <li>
               <Link
                 to="/home"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl"
+                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl"
               >
                 Home
               </Link>
@@ -24,7 +24,7 @@ export default function HomeNavbar() {
             <li>
               <Link
                 to="/category"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl"
+                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl"
               >
                 Category
               </Link>
@@ -32,7 +32,7 @@ export default function HomeNavbar() {
             <li>
               <Link
                 to="/about"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl"
+                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl"
               >
                 About
               </Link>
@@ -40,7 +40,7 @@ export default function HomeNavbar() {
             <li>
               <Link
                 to="/contact"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl"
+                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl"
               >
                 Contact Us
               </Link>
@@ -48,26 +48,26 @@ export default function HomeNavbar() {
           </ul>
 
           <div className="flex items-center lg:order-2">
-            {checkUser ? (
+            {authUser ? (
               <Link
                 to="/"
                 className=" text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
               >
-                Welcome {checkUser.first_name}
+                Hello {name}
               </Link>
             ) : (
               <Link
                 to="/login"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
+                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
               >
                 Log in
               </Link>
             )}
 
-            {checkUser ? (
+            {authUser ? (
               <Link
                 to="/"
-                className=" text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none"
+                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
                 onClick={logout}
               >
                 Log out
