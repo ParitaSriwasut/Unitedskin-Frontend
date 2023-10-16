@@ -13,7 +13,6 @@ export const AuthContext = createContext();
 export default function AuthContextProvider({ children }) {
   const [initialLoading, setInitialLoading] = useState(true);
   const [authUser, setAuthUser] = useState(null);
-  // const [checkUser, setCheckUser] = useState(null);
 
   useEffect(() => {
     if (getAccessToken()) {

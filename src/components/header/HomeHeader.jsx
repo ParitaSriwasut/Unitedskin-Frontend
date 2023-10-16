@@ -1,9 +1,9 @@
 import myHero from "../../images/Hero1.png";
 export default function HomeHeader() {
   return (
-    <div className="w-screen  -z-10 h-screen top-0">
+    <div className="w-screen -z-10 h-screen top-0">
       <img
-        className="s inset-0 w-full h-full object-cover"
+        className="inset-0 w-full h-full object-cover"
         alt="hero"
         src={myHero}
       />
@@ -30,7 +30,7 @@ export default function HomeHeader() {
             Want beautiful skin? UNITED & FREE is the key!
           </h1>
           <button className="mt-5 bg-green text-zinc-600 rounded-md text-xl py-4 px-8 ">
-            Let's get to know us
+            Let&apos;s get to know us
           </button>
         </div>
       </div>

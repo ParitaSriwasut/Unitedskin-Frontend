@@ -6,9 +6,9 @@ import { useAuth } from "../../hooks/use-auth";
 export default function HomeNavbar() {
   const { authUser, logout } = useAuth();
   return (
-    <div className="bg-neutral z-50">
+    <div className="bg-neutral">
       <div className="container mx-auto">
-        <nav className="flex justify-between items-center py-4">
+        <nav className="flex justify-between items-center py-2">
           <Link to="/home" className="flex items-center">
             <img className="h-9" src={myLogo} alt="logo" />
           </Link>
@@ -51,9 +51,9 @@ export default function HomeNavbar() {
             {authUser ? (
               <Link
                 to="/"
-                className=" text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-2xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
+                className=" text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
               >
-                Hello {name}
+                Hello {authUser.name}
               </Link>
             ) : (
               <Link
