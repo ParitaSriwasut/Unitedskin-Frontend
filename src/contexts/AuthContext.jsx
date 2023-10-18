@@ -19,8 +19,8 @@ export default function AuthContextProvider({ children }) {
       axios
         .get("/auth/me")
         .then((result) => {
-          setAuthUser(result.data.user);
-          console.log(result.data.user.role);
+          setAuthUser(result.data.user.isAdmin);
+          console.log(result.data.user.isAdmin);
         })
         .finally(() => {
           setInitialLoading(false);
@@ -47,11 +47,6 @@ export default function AuthContextProvider({ children }) {
     removeAccessToken();
     setAuthUser(null);
   };
-
-  // const updateProfile = async data => {
-  //   const res = await axios.patch('/user', data);
-  //   setAuthUser({ ...authUser, ...res.data });
-  // };
 
   return (
     <AuthContext.Provider

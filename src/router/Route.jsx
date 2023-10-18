@@ -10,7 +10,7 @@ import Home from "../pages/Home";
 import ShoppingCart from "../pages/ShoppingCart";
 import Payment from "../pages/Payment";
 import ConfirmOrder from "../pages/ConfirmOrder";
-import Product from "../pages/Product";
+import CreateProduct from "../pages/Admin/CreateProduct";
 
 const router = createBrowserRouter([
   {
@@ -28,10 +28,13 @@ const router = createBrowserRouter([
       },
       { path: "/register", element: <Register /> },
       { path: "/shopping_cart", element: <ShoppingCart /> },
-      { path: "/product", element: <Product /> },
       { path: "/payment", element: <Payment /> },
       { path: "/confirm_order", element: <ConfirmOrder /> },
     ],
+  },
+  {
+    path: "/admin/product",
+    element: <CreateProduct />,
   },
   {
     path: "/welcome",
