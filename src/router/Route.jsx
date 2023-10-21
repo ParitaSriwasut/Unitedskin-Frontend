@@ -7,12 +7,11 @@ import HomeLayout from "../layout/HomeLayout";
 import RedirectIfAuthenticated from "../features/auth/RedirectIfAuthenticated";
 // import Authenticated from "../features/auth/Authenticated";
 import Home from "../pages/Home";
-import ShoppingCart from "../pages/ShoppingCart";
+import Cart from "../pages/Cart";
 import Payment from "../pages/Payment";
-import ConfirmOrder from "../pages/ConfirmOrder";
 import CreateProduct from "../pages/Admin/CreateProduct";
-import ProductList from "../components/Product/ProductList";
-import ProductDetails from "../components/Product/ProductDetails";
+import ProductList from "../pages/ProductList";
+import ProductDetail from "../pages/ProductDetail";
 
 const router = createBrowserRouter([
   {
@@ -29,11 +28,10 @@ const router = createBrowserRouter([
         ),
       },
       { path: "/register", element: <Register /> },
-      { path: "/shopping_cart", element: <ShoppingCart /> },
+      { path: "/cart", element: <Cart /> },
       { path: "/payment", element: <Payment /> },
-      { path: "/confirm_order", element: <ConfirmOrder /> },
-      { path: "/product_list", element: <ProductList /> },
-      { path: "/product_details", element: <ProductDetails /> },
+      { path: "/products", element: <ProductList /> },
+      { path: "/products/:id", element: <ProductDetail /> },
     ],
   },
   {
