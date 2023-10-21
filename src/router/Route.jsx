@@ -11,6 +11,8 @@ import ShoppingCart from "../pages/ShoppingCart";
 import Payment from "../pages/Payment";
 import ConfirmOrder from "../pages/ConfirmOrder";
 import CreateProduct from "../pages/Admin/CreateProduct";
+import ProductList from "../components/Product/ProductList";
+import ProductDetails from "../components/Product/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,8 @@ const router = createBrowserRouter([
       { path: "/shopping_cart", element: <ShoppingCart /> },
       { path: "/payment", element: <Payment /> },
       { path: "/confirm_order", element: <ConfirmOrder /> },
+      { path: "/product_list", element: <ProductList /> },
+      { path: "/product_details", element: <ProductDetails /> },
     ],
   },
   {

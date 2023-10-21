@@ -1,4 +1,3 @@
-//HomeNavbar.jsx
 import { Link } from "react-router-dom";
 import myLogo from "../../assets/logo/Logo-2.png";
 import { useAuth } from "../../hooks/use-auth";
@@ -9,13 +8,13 @@ export default function HomeNavbar() {
     <div className="bg-neutral">
       <div className="container mx-auto">
         <nav className="flex justify-between items-center py-2">
-          <Link to="/home" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img className="h-9" src={myLogo} alt="logo" />
           </Link>
           <ul className="hidden md:flex space-x-12">
             <li>
               <Link
-                to="/home"
+                to="/"
                 className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl"
               >
                 Home

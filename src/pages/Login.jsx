@@ -10,17 +10,13 @@ export default function Login() {
     password: "",
   });
   const { login } = useAuth();
-  // const [authUser, setAuthUser] = useState(null);
+  const [authUser, setAuthUser] = useState(null);
 
   const handleSubmitForm = async (e) => {
     e.preventDefault();
-    await login(input);
-    window.location.href = "/";
-    //   .then((res) => {
-    //     navigate("/");
-    //     console.log(res);
-    //   })
-    //   .catch((err) => {});
+    const res = await login(input);
+    setAuthUser(res);
+    navigate("/");
   };
 
   return (

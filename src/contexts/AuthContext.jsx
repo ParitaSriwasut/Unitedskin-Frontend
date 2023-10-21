@@ -8,6 +8,7 @@ import {
 } from "../utils/local-storage";
 import { useEffect } from "react";
 
+
 export const AuthContext = createContext();
 
 export default function AuthContextProvider({ children }) {
