@@ -1,3 +1,8 @@
-export default function Cart() {
-  return <div>Cart</div>;
+import { CartContainer } from "../container/Cart";
+
+
+export default function CartDetail() {
+    return CartContainer();
 }
+    
+

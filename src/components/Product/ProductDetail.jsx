@@ -1,4 +1,4 @@
-export default function ProductDetail({ product }) {
+export default function ProductDetail({ product, addToCart }) {
   return (
     <>
       <div className="mt-20 bg-gray-200">
@@ -28,10 +28,13 @@ export default function ProductDetail({ product }) {
                     <strong>Price: ${product.productPrice}</strong>
                   </div>
                   <div className="mt-4">
-                    <button className="bg-red-500 text-white py-2 px-6 rounded-full">
+                    <button
+                      className="bg-green text-white py-2 px-6 rounded-full"
+                      onClick={() => addToCart(product)}
+                    >
                       <i
                         className="far fa-shopping-cart"
-                        style={{ color: "#050505" }}
+                        style={{ color: "#78716c" }}
                       ></i>{" "}
                       Add to Cart
                     </button>

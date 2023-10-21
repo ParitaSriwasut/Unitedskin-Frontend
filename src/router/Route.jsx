@@ -10,8 +10,8 @@ import Home from "../pages/Home";
 import Cart from "../pages/Cart";
 import Payment from "../pages/Payment";
 import CreateProduct from "../pages/Admin/CreateProduct";
-import ProductList from "../pages/ProductList";
-import ProductDetail from "../pages/ProductDetail";
+import ProductList  from "../pages/ProductList";
+import ProductDetail  from "../pages/ProductDetail";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +30,7 @@ const router = createBrowserRouter([
       { path: "/register", element: <Register /> },
       { path: "/cart", element: <Cart /> },
       { path: "/payment", element: <Payment /> },
+      
       { path: "/products", element: <ProductList /> },
       { path: "/products/:id", element: <ProductDetail /> },
     ],
