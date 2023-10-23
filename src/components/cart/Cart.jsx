@@ -11,16 +11,16 @@ export default function Cart({ items, total, deleteFromCart }) {
               <h2 className="font-semibold text-2xl">{items?.length} Items</h2>
             </div>
             <div className="flex flex-wrap mt-10 mb-5">
-              <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">
+              <h3 className="font-semibold text-gray-600 text-md uppercase w-2/5">
                 Product Details
               </h3>
-              <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5">
+              <h3 className="font-semibold text-center text-gray-600 text-md uppercase w-1/5">
                 Quantity
               </h3>
-              <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5">
+              <h3 className="font-semibold text-center text-gray-600 text-md uppercase w-1/5">
                 Price
               </h3>
-              <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5">
+              <h3 className="font-semibold text-center text-gray-600 text-md uppercase w-1/5">
                 Total
               </h3>
             </div>
@@ -77,7 +77,7 @@ export default function Cart({ items, total, deleteFromCart }) {
                     </svg>
                   </div>
                   <span className="text-center w-1/5 font-semibold text-sm">
-                    ${item.product.price}
+                    ${item.product.productPrice}
                   </span>
                   <span className="text-center w-1/5 font-semibold text-sm">
                     ${total.toFixed(2)}
@@ -125,7 +125,7 @@ export default function Cart({ items, total, deleteFromCart }) {
                 className="p-2 text-sm w-full"
               />
             </div>
-            <button className="bg-red-500 hover:bg-red-600 px-3 py-1 text-sm text-white uppercase">
+            <button className="bg-teal hover:bg-red-600 px-3 py-1 text-sm text-white uppercase">
               Apply
             </button>
             <div className="border-t mt-8">
@@ -135,7 +135,7 @@ export default function Cart({ items, total, deleteFromCart }) {
               </div>
               <Link
                 to="/checkout"
-                className="bg-indigo-500 font-semibold hover-bg-indigo-600 py-3 p-2 text-sm text-white uppercase w-full"
+                className="bg-orange2 font-semibold hover-bg-indigo-600 py-3 p-2 text-sm text-orange uppercase w-full"
               >
                 Order now
               </Link>

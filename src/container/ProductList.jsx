@@ -25,7 +25,7 @@ export function ProductListContainer() {
   }, [categoryName]);
 
   if (loading) {
-    return Loading();
+    return <Loading />;
   }
 
   return ProductList({ products });

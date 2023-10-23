@@ -14,6 +14,7 @@ export default function CreateProduct({ onSubmit, onSuccess }) {
     guide: "",
     productPrice: "",
     categoryName: "",
+    image: "",
   });
 
   const handleChangeInput = (e) => {
@@ -182,3 +183,16 @@ function SelectImageButton({ onClick }) {
     </div>
   );
 }
+
+// // Render your component with the fetched data
+// return (
+//   <div>
+//     <h1>Create Product</h1>
+//     <ul>
+//       {data.map((product) => (
+//         <li key={product.id}>{product.name}</li>
+//       ))}
+//     </ul>
+//     {/* Add your product creation form or other components here */}
+//   </div>
+// )

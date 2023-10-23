@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext } from "react";
 import axios from "../configs/axios";
 
 // Create a CartContext
@@ -61,6 +61,39 @@ export default function CartContextProvider({ children }) {
 
     callAPI();
   };
+
+  // const handleInc = (product) => {
+  //   async function callAPI()
+  //   {
+  
+  //     const updatedCart = carts.map(item => {
+  //       if(item.id === id){
+  //         return{
+  //           ...item,
+  //           quantity: item.quantity + 1
+  //         }
+  //       }
+  //       return item
+  //     })
+  //     localStorage.setItem('cart', JSON.stringify(updatedCart))
+  //     navigate('/cart')
+  // }
+  // }
+
+  // const handleDec = (id ) => {
+  //   const updatedCart = carts.map(item => {
+  //     if(item.id === id){
+  //       const newQuantity = Math.max(1, item.quantity - 1);
+  //       return{
+  //         ...item,
+  //         quantity: newQuantity
+  //       }
+  //     }
+  //     return item
+  //   })
+  //   localStorage.setItem('cart', JSON.stringify(updatedCart))
+  //   navigate('/cart')
+  // }
 
   return (
     <CartContext.Provider value={{ cart, addToCart, deleteFromCart, getCart }}>

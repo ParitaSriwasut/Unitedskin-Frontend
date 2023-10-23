@@ -29,7 +29,7 @@ export function ProductDetailContainer() {
   }, [id]);
 
   if (loading) {
-    return Loading();
+    return <Loading />;
   }
 
   return ProductDetail({ product, addToCart });

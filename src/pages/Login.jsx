@@ -3,6 +3,7 @@ import { useState } from "react";
 import myImage from "../images/login-2.png";
 import LoginInput from "../features/auth/LoginInput";
 import { useAuth } from "../hooks/use-auth";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [input, setInput] = useState({
@@ -12,6 +13,7 @@ export default function Login() {
   const { login } = useAuth();
   const [authUser, setAuthUser] = useState(null);
 
+  const navigate = useNavigate();
   const handleSubmitForm = async (e) => {
     e.preventDefault();
     const res = await login(input);

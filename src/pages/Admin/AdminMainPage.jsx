@@ -1,3 +1,8 @@
-export default function AdminMainPage() {
-  return <div>AdminPage</div>;
+import Dashboard from "../Admin/Dashboard"
+
+export default function AdminMainPage()
+{
+  return (
+    <Dashboard/>
+  )
 }
