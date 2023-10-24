@@ -1,4 +1,11 @@
-export default function ProductDetail({ product, addToCart }) {
+import { Link } from "react-router-dom";
+
+export default function ProductDetail({
+  product,
+  addToCart,
+  isAdminUser,
+  adminDeleteHandler,
+}) {
   return (
     <>
       <div className="mt-20 bg-gray-200">
@@ -39,6 +46,23 @@ export default function ProductDetail({ product, addToCart }) {
                       Add to Cart
                     </button>
                   </div>
+
+                  {isAdminUser && (
+                    <div className="mt-4">
+                      <Link to={`/admin/product/${product.id}`}>
+                        <button className="bg-green text-white py-2 px-6 rounded-full">
+                          <i style={{ color: "#78716c" }}></i> Edit
+                        </button>
+                      </Link>
+
+                      <button
+                        className="bg-green text-white py-2 px-6 rounded-full"
+                        onClick={adminDeleteHandler}
+                      >
+                        <i style={{ color: "#78716c" }}></i> Delete
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </section>

@@ -1,7 +1,7 @@
 import myImage from "../images/a.png";
 import { Link } from "react-router-dom";
 
-export default function LandingPage() {
+export default function WelcomePage() {
   return (
     <div className="flex overflow-hidden bg-neutral w-full">
       <div className="flex flex-1 item-center justify-center mt-[230px]">

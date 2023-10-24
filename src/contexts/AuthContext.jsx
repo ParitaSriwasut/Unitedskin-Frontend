@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { createContext } from "react";
 import axios from "../configs/axios";
 import {
@@ -7,7 +7,7 @@ import {
   removeAccessToken,
 } from "../utils/local-storage";
 import { useEffect } from "react";
-
+import { redirect } from "react-router-dom";
 
 export const AuthContext = createContext();
 
@@ -15,17 +15,18 @@ export default function AuthContextProvider({ children }) {
   const [initialLoading, setInitialLoading] = useState(true);
   const [authUser, setAuthUser] = useState(null);
 
+  const getUser = async () => {
+    const response = await axios.get("/auth/me");
+    if (!response.status === 200) {
+      throw new Error("Network response was not 200");
+    }
+    setAuthUser(response.data.user);
+  };
+
   useEffect(() => {
     if (getAccessToken()) {
-      axios
-        .get("/auth/me")
-        .then((result) => {
-          setAuthUser(result.data.user.isAdmin);
-          console.log(result.data.user.isAdmin);
-        })
-        .finally(() => {
-          setInitialLoading(false);
-        });
+      getUser();
+      setInitialLoading(false);
     } else {
       setInitialLoading(false);
     }
@@ -47,6 +48,7 @@ export default function AuthContextProvider({ children }) {
   const logout = () => {
     removeAccessToken();
     setAuthUser(null);
+    window.location.replace("/welcome");
   };
 
   return (
@@ -57,6 +59,7 @@ export default function AuthContextProvider({ children }) {
         register,
         logout,
         initialLoading,
+        getUser,
       }}
     >
       {children}

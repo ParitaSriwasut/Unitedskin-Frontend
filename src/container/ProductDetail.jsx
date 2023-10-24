@@ -4,6 +4,7 @@ import ProductDetail from "../components/Product/ProductDetail";
 import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import { useCart } from "../contexts/CartContext";
+import { useAuth } from "../hooks/use-auth";
 
 export function ProductDetailContainer() {
   const { id } = useParams();
@@ -12,6 +13,11 @@ export function ProductDetailContainer() {
   const [loading, setLoading] = useState(true);
 
   const { cart, addToCart } = useCart();
+  const { authUser, getUser } = useAuth();
+
+  if (!authUser) {
+    getUser();
+  }
 
   useEffect(() => {
     async function fetchProduct() {
@@ -28,9 +34,31 @@ export function ProductDetailContainer() {
     fetchProduct();
   }, [id]);
 
+  const adminDeleteHandler = async () => {
+    const response = await axios.delete("/product/" + id);
+    if (!response.status === 200) {
+      throw new Error("Network response was not 200");
+    }
+
+    const deleted = response.data.deleted;
+    const reason = response.data.reason;
+
+    if (deleted) {
+      alert("Delete product successfully!");
+      window.location.replace("/products");
+    } else {
+      alert("Delete product failed! " + reason);
+    }
+  };
+
   if (loading) {
     return <Loading />;
   }
 
-  return ProductDetail({ product, addToCart });
+  return ProductDetail({
+    product,
+    addToCart,
+    isAdminUser: authUser.isAdmin,
+    adminDeleteHandler,
+  });
 }

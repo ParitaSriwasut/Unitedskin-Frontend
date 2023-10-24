@@ -2,18 +2,22 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { RouterProvider } from "react-router-dom";
-import LandingPage from "../pages/LandingPage";
+import WelcomePage from "../pages/WelcomePage";
 import HomeLayout from "../layout/HomeLayout";
 import RedirectIfAuthenticated from "../features/auth/RedirectIfAuthenticated";
 import Authenticated from "../features/auth/Authenticated";
 import Home from "../pages/Home";
 import Cart from "../pages/Cart";
-import Payment from "../pages/Payment";
-import CreateProduct from "../pages/Admin/CreateProduct";
+import CreateProduct from "../pages/Admin/CreateEditProduct";
 import ProductList from "../pages/ProductList";
 import ProductDetail from "../pages/ProductDetail";
+import Checkout from "../pages/Checkout";
 
 const router = createBrowserRouter([
+  {
+    path: "/welcome",
+    element: <WelcomePage />,
+  },
   {
     path: "/",
     element: (
@@ -25,9 +29,9 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/register", element: <Register /> },
       { path: "/cart", element: <Cart /> },
-      { path: "/payment", element: <Payment /> },
       { path: "/products", element: <ProductList /> },
       { path: "/products/:id", element: <ProductDetail /> },
+      { path: "/checkout", element: <Checkout /> },
     ],
   },
   {
@@ -43,8 +47,8 @@ const router = createBrowserRouter([
     element: <CreateProduct />,
   },
   {
-    path: "/welcome",
-    element: <LandingPage />,
+    path: "/admin/product/:id",
+    element: <CreateProduct />,
   },
 ]);
 

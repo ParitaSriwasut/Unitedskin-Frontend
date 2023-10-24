@@ -1,8 +1,11 @@
-import Dashboard from "../Admin/Dashboard"
+import Dashboard from "../Admin/Dashboard";
+import CreateProduct from "../../pages/Admin/CreateProduct";
 
-export default function AdminMainPage()
-{
+export default function AdminMainPage() {
   return (
-    <Dashboard/>
-  )
+    <div>
+      <Dashboard />
+      <CreateProduct />
+    </div>
+  );
 }

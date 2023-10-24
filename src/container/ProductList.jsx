@@ -2,12 +2,18 @@ import { useState, useEffect } from "react";
 import axios from "../configs/axios";
 import ProductList from "../components/Product/ProductList";
 import Loading from "../components/Loading";
+import { useAuth } from "../hooks/use-auth";
 
 export function ProductListContainer() {
   const categoryName = new URLSearchParams(location.search).get("categoryName");
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const { authUser, getUser } = useAuth();
+  if (!authUser) {
+    getUser();
+  }
 
   useEffect(() => {
     async function fetchProducts() {
@@ -28,5 +34,5 @@ export function ProductListContainer() {
     return <Loading />;
   }
 
-  return ProductList({ products });
+  return ProductList({ products, isAdminUser: authUser.isAdmin });
 }
