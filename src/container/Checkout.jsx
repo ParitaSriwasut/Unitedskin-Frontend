@@ -9,7 +9,6 @@ export function CheckoutContainer() {
   if (!cart.items) {
     getCart();
   }
-
   const [address, setAddress] = useState("");
   const [cardNumber, setCardNumber] = useState("");
 

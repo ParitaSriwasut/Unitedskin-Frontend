@@ -27,6 +27,25 @@ export default function CartContextProvider({ children }) {
     callAPI();
   };
 
+  const deleteFromCart = (productId) => {
+    async function callAPI() {
+      const response = await axios.post("/cart/delete-to-cart", {
+        productId,
+      });
+      if (!response.status === 200) {
+        throw new Error("Network response was not 200");
+      }
+
+      const data = response.data;
+      setCart({
+        items: data.items,
+        total: data.total,
+      });
+    }
+
+    callAPI();
+  };
+
   const getCart = () => {
     async function fetchItems() {
       const response = await axios.get("/cart");
@@ -43,10 +62,10 @@ export default function CartContextProvider({ children }) {
     fetchItems();
   };
 
-  const deleteFromCart = (product) => {
+  const handleInc = (productId) => {
     async function callAPI() {
-      const response = await axios.post("/cart/delete-from-cart", {
-        productId: product.id,
+      const response = await axios.post("/cart/add-to-cart", {
+        productId,
       });
       if (!response.status === 200) {
         throw new Error("Network response was not 200");
@@ -62,41 +81,50 @@ export default function CartContextProvider({ children }) {
     callAPI();
   };
 
-  // const handleInc = (product) => {
-  //   async function callAPI()
-  //   {
-  
-  //     const updatedCart = carts.map(item => {
-  //       if(item.id === id){
-  //         return{
-  //           ...item,
-  //           quantity: item.quantity + 1
-  //         }
-  //       }
-  //       return item
-  //     })
-  //     localStorage.setItem('cart', JSON.stringify(updatedCart))
-  //     navigate('/cart')
-  // }
-  // }
+  const handleDec = (productId) => {
+    async function callAPI() {
+      const response = await axios.post("/cart/remove-from-cart", {
+        productId,
+      });
+      if (!response.status === 200) {
+        throw new Error("Network response was not 200");
+      }
 
-  // const handleDec = (id ) => {
-  //   const updatedCart = carts.map(item => {
-  //     if(item.id === id){
-  //       const newQuantity = Math.max(1, item.quantity - 1);
-  //       return{
-  //         ...item,
-  //         quantity: newQuantity
-  //       }
-  //     }
-  //     return item
-  //   })
-  //   localStorage.setItem('cart', JSON.stringify(updatedCart))
-  //   navigate('/cart')
-  // }
+      const data = response.data;
+      setCart({
+        items: data.items,
+        total: data.total,
+      });
+    }
+
+    callAPI();
+  };
+  const increaseDecreaseProduct = async (productId, action) => {
+    try {
+      if (action === "increase") {
+        handleInc(productId);
+      } else if (action === "decrease") {
+        handleDec(productId);
+      }
+
+      getCart();
+    } catch (error) {
+      console.error("Error increasing/decreasing product:", error);
+    }
+  };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, deleteFromCart, getCart }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        deleteFromCart,
+        getCart,
+        handleInc,
+        handleDec,
+        increaseDecreaseProduct,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

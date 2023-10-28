@@ -1,12 +1,20 @@
-import Cart from "../components/cart/Cart";
+import CartComponent from "../components/cart/Cart";
 import { useCart } from "../contexts/CartContext";
 
-export function CartContainer() {
-  const { cart, getCart, deleteFromCart } = useCart();
+export default function CartContainer() {
+  const { cart, getCart, deleteFromCart, increaseDecreaseProduct } = useCart();
 
   if (!cart.items) {
     getCart();
   }
 
-  return Cart({ items: cart.items, total: cart.total, deleteFromCart });
+  return (
+    <CartComponent
+      items={cart.items}
+      total={cart.total}
+      deleteFromCart={deleteFromCart}
+      increaseDecreaseProduct={increaseDecreaseProduct}
+    />
+  );
 }
+export { CartContainer };

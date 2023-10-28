@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useCart } from "../../contexts/CartContext";
 
-export default function Cart({ items, total, deleteFromCart }) {
+export default function CartComponent({ items, total, deleteFromCart }) {
+  const { increaseDecreaseProduct } = useCart();
+
   return (
     <>
       <div className="container mx-auto mt-10">
@@ -57,7 +60,9 @@ export default function Cart({ items, total, deleteFromCart }) {
                     <svg
                       className="fill-current text-gray-600 w-3 cursor-pointer"
                       viewBox="0 0 448 512"
-                      onClick={() => handleDec(item.product.id)}
+                      onClick={() =>
+                        increaseDecreaseProduct(item.product.id, "decrease")
+                      }
                     >
                       <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0-32-14.33-32-32v-32c0-17.67-14.33-32-32-32z" />
                     </svg>
@@ -70,7 +75,9 @@ export default function Cart({ items, total, deleteFromCart }) {
 
                     <svg
                       className="fill-current text-gray-600 w-3 cursor-pointer"
-                      onClick={() => handleInc(item.product.id)}
+                      onClick={() =>
+                        increaseDecreaseProduct(item.product.id, "increase")
+                      }
                       viewBox="0 0 448 512"
                     >
                       <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
