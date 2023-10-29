@@ -8,44 +8,22 @@ const CartContext = createContext();
 export default function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  const addToCart = (product) => {
+  const addToCart = (productId) => {
     async function callAPI() {
       const response = await axios.post("/cart/add-to-cart", {
-        productId: product.id,
-      });
-      if (!response.status === 200) {
-        throw new Error("Network response was not 200");
-      }
-
-      const data = response.data;
-      setCart({
-        items: data.items,
-        total: data.total,
-      });
-    }
-
-    callAPI();
-  };
-
-  const deleteFromCart = (productId) => {
-    async function callAPI() {
-      const response = await axios.post("/cart/delete-to-cart", {
         productId,
       });
       if (!response.status === 200) {
         throw new Error("Network response was not 200");
       }
-
       const data = response.data;
       setCart({
         items: data.items,
         total: data.total,
       });
     }
-
     callAPI();
   };
-
   const getCart = () => {
     async function fetchItems() {
       const response = await axios.get("/cart");
@@ -58,13 +36,28 @@ export default function CartContextProvider({ children }) {
         total: data.total,
       });
     }
-
     fetchItems();
+  };
+  const deleteFromCart = (productId) => {
+    async function callAPI() {
+      const response = await axios.post("/cart/delete-from-cart", {
+        productId,
+      });
+      if (!response.status === 200) {
+        throw new Error("Network response was not 200");
+      }
+      const data = response.data;
+      setCart({
+        items: data.items,
+        total: data.total,
+      });
+    }
+    callAPI();
   };
 
   const handleInc = (productId) => {
     async function callAPI() {
-      const response = await axios.post("/cart/add-to-cart", {
+      const response = await axios.patch("/cart/increase-from-cart", {
         productId,
       });
       if (!response.status === 200) {
@@ -83,7 +76,7 @@ export default function CartContextProvider({ children }) {
 
   const handleDec = (productId) => {
     async function callAPI() {
-      const response = await axios.post("/cart/remove-from-cart", {
+      const response = await axios.patch("/cart/decrease-from-cart", {
         productId,
       });
       if (!response.status === 200) {
