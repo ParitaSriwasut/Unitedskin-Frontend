@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import { RouterProvider } from "react-router-dom";
 import WelcomePage from "../pages/WelcomePage";
 import HomeLayout from "../layout/HomeLayout";
 import RedirectIfAuthenticated from "../features/auth/RedirectIfAuthenticated";
@@ -12,6 +12,8 @@ import CreateProduct from "../pages/Admin/CreateEditProduct";
 import ProductList from "../pages/ProductList";
 import ProductDetail from "../pages/ProductDetail";
 import Checkout from "../pages/Checkout";
+import Category from "../components/content/Category";
+import AboutUs from "../components/content/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,8 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/register", element: <Register /> },
+      { path: "/category", element: <Category /> },
+      { path: "/about", element: <AboutUs /> },
       { path: "/cart", element: <Cart /> },
       { path: "/products", element: <ProductList /> },
       { path: "/products/:id", element: <ProductDetail /> },

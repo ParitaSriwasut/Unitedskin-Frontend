@@ -21,7 +21,7 @@ export default function HomeNavbar() {
             <li>
               <Link
                 to="/"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl"
+                className="flex text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2"
               >
                 Home
               </Link>
@@ -29,7 +29,7 @@ export default function HomeNavbar() {
             <li>
               <Link
                 to="/category"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl"
+                className=" flex text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2 "
               >
                 Category
               </Link>
@@ -37,7 +37,7 @@ export default function HomeNavbar() {
             <li>
               <Link
                 to="/about"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl"
+                className=" flex text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2 "
               >
                 About
               </Link>
@@ -45,7 +45,7 @@ export default function HomeNavbar() {
             <li>
               <Link
                 to="/contact"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl"
+                className="flex flex-row text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2 "
               >
                 Contact Us
               </Link>
@@ -56,14 +56,14 @@ export default function HomeNavbar() {
             {authUser ? (
               <Link
                 to="/"
-                className=" text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
+                className="flex flex-row text-white focus:ring-2  focus:ring-white focus:border-white rounded-xl text-lg px-3 py-2 "
               >
                 Hello {authUser.name} {authUser.isAdmin && "(Admin)"}
               </Link>
             ) : (
               <Link
                 to="/login"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
+                className=" flex flex-row text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-3 py-2 "
               >
                 Log in
               </Link>
@@ -72,7 +72,7 @@ export default function HomeNavbar() {
             {authUser && authUser.isAdmin && (
               <Link
                 to="/admin/product"
-                className=" text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
+                className="flex flex-row text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-3  "
               >
                 Add Product
               </Link>
@@ -81,7 +81,7 @@ export default function HomeNavbar() {
             {authUser ? (
               <Link
                 to="/"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-xl px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
+                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-lg px-3 "
                 onClick={logout}
               >
                 Log out

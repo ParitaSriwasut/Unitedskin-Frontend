@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function ProductDetail({
   product,
+  productId,
   addToCart,
   isAdminUser,
   adminDeleteHandler,
@@ -37,7 +38,7 @@ export default function ProductDetail({
                   <div className="mt-4">
                     <button
                       className="bg-green text-white py-2 px-6 rounded-full"
-                      onClick={() => addToCart(product)}
+                      onClick={() => addToCart(productId)}
                     >
                       <i
                         className="far fa-shopping-cart"
