@@ -24,6 +24,7 @@ export default function CartContextProvider({ children }) {
     }
     callAPI();
   };
+
   const getCart = () => {
     async function fetchItems() {
       const response = await axios.get("/cart");
@@ -38,6 +39,7 @@ export default function CartContextProvider({ children }) {
     }
     fetchItems();
   };
+
   const deleteFromCart = (productId) => {
     async function callAPI() {
       const response = await axios.post("/cart/delete-from-cart", {

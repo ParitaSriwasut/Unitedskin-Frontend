@@ -1,14 +1,14 @@
 import myVideo from "../../assets/video/videoMockup.mp4";
-import myBg from "../../assets/image/resized-image-Promo.jpeg";
+import myBg from "../../assets/image/pic3.jpeg";
 
 export default function VideoMockup() {
   return (
     <>
-      <div className="m-40 bg-gray"></div>
+      <div className="m-0 bg-gray"></div>
       <div style={{ backgroundImage: `url(${myBg})` }}>
-        <div className="container max-width: 1000px; flex overflow-hidden justify-center p-14 m-14 backdrop-blur-sm">
+        <div className="container:w-h-[1100px] flex overflow-hidden justify-center px-40 py-40 mr-18 backdrop-blur-lg">
           <video
-            className="w-[1100px]"
+            className="w-h-[1100px]"
             // controls
             autoPlay
             muted
