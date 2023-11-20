@@ -6,8 +6,8 @@ export default function CartComponent({ items, total, deleteFromCart }) {
 
   return (
     <>
-      <div className="container mx-auto mt-10">
-        <div className="w-3/4 shadow-md my-10 flex-wrap">
+      <div className="container mx-auto mt-10 flex justify-center">
+        <div className="w-3/4 shadow-lg my-10 flex-wrap">
           <div className="bg-white px-10 py-1">
             <div className="flex justify-between border-b pb-8">
               <h1 className="font-semibold text-2xl">Shopping Cart</h1>

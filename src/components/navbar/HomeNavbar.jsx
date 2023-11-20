@@ -91,7 +91,7 @@ export default function HomeNavbar() {
             )}
           </div>
 
-          <div className="xl:flex space-x-5 items-center">
+          <div className="xl:flex space-x-5 items-center gap-6">
             <Link to="#">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

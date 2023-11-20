@@ -14,6 +14,8 @@ import ProductDetail from "../pages/ProductDetail";
 import Checkout from "../pages/Checkout";
 import Category from "../components/content/Category";
 import AboutUs from "../components/content/AboutUs";
+import AdminMainPage from "../layout/AdminLayout";
+import Admin from "../pages/Admin";
 
 const router = createBrowserRouter([
   {
@@ -47,13 +49,18 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/admin/product",
-    element: <CreateProduct />,
+    path: "/admin",
+    element: <AdminMainPage />,
+    children: [{ path: "/admin/home", element: <Admin /> }],
   },
-  {
-    path: "/admin/product/:id",
-    element: <CreateProduct />,
-  },
+  // {
+  //   path: "/admin/product",
+  //   element: <CreateProduct />,
+  // },
+  // {
+  //   path: "/admin/product/:id",
+  //   element: <CreateProduct />,
+  // },
 ]);
 
 export default function Route() {

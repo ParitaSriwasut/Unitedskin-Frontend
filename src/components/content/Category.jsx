@@ -1,16 +1,14 @@
+import { Link } from "react-router-dom";
 import myKids from "../../images/kidsskincare.jpeg";
 import menSkincare from "../../images/menskincare.jpeg";
 import womenSkincare from "../../images/womenskincare.jpeg";
 import unisex from "../../images/unisex.jpeg";
-import { Link } from "react-router-dom";
 import VideoMockup from "./VideoMockup";
 import AboutUs from "./AboutUs";
 
 export default function Category() {
   return (
     <div className="flex flex-col">
-      <VideoMockup />
-
       <div className="flex justify-center items-center">
         <div className="2xl:mx-auto 2xl:container py-12 px-4 sm:px-6 xl:px-20 2xl:px-0 w-full">
           <div className="flex flex-col justify-center items-center space-y-10">
@@ -41,7 +39,7 @@ export default function Category() {
                     src={myKids}
                     alt="kids-image"
                   />
-                  <button className="bg-neutral text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10   text-xl text-bold leading-none py-3 w-36 mt-5">
+                  <button className="bg-neutral text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 text-xl text-bold leading-none py-3 w-36 mt-5">
                     Kids
                   </button>
                 </div>
@@ -76,6 +74,7 @@ export default function Category() {
           </div>
         </div>
       </div>
+      <VideoMockup />
       <AboutUs />
     </div>
   );
