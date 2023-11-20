@@ -8,7 +8,6 @@ import RedirectIfAuthenticated from "../features/auth/RedirectIfAuthenticated";
 import Authenticated from "../features/auth/Authenticated";
 import Home from "../pages/Home";
 import Cart from "../pages/Cart";
-import CreateProduct from "../pages/Admin/CreateEditProduct";
 import ProductList from "../pages/ProductList";
 import ProductDetail from "../pages/ProductDetail";
 import Checkout from "../pages/Checkout";
