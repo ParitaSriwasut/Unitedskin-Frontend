@@ -8,6 +8,7 @@ import RedirectIfAuthenticated from "../features/auth/RedirectIfAuthenticated";
 import Authenticated from "../features/auth/Authenticated";
 import Home from "../pages/Home";
 import Cart from "../pages/Cart";
+import CreateProduct from "../pages/Admin/CreateEditProduct";
 import ProductList from "../pages/ProductList";
 import ProductDetail from "../pages/ProductDetail";
 import Checkout from "../pages/Checkout";
@@ -52,14 +53,14 @@ const router = createBrowserRouter([
     element: <AdminMainPage />,
     children: [{ path: "/admin/home", element: <Admin /> }],
   },
-  // {
-  //   path: "/admin/product",
-  //   element: <CreateProduct />,
-  // },
-  // {
-  //   path: "/admin/product/:id",
-  //   element: <CreateProduct />,
-  // },
+  {
+    path: "/admin/product",
+    element: <CreateProduct />,
+  },
+  {
+    path: "/admin/product/:id",
+    element: <CreateProduct />,
+  },
 ]);
 
 export default function Route() {

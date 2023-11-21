@@ -68,7 +68,7 @@ export default function CartComponent({ items, total, deleteFromCart }) {
                     </svg>
 
                     <input
-                      className="mx-2 border text-center w-8"
+                      className="mx-4 border text-center w-10"
                       type="text"
                       value={item.quantity}
                     />
