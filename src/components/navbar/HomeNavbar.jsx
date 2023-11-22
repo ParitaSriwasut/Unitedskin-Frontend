@@ -87,7 +87,7 @@ export default function HomeNavbar() {
             {authUser ? (
               <Link
                 to="/"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-lg px-3 "
+                className="text-white focus:ring-2 focus:ring-white focus:border-white rounded-lg text-lg px-3 "
                 onClick={handleLogout}
               >
                 Log out

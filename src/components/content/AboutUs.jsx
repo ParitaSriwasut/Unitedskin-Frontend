@@ -2,7 +2,7 @@ import aboutImage from "../../assets/image/about.jpeg";
 
 export default function AboutUs() {
   return (
-    <div className="bg-gray">
+    <div className="bg-white">
       <div className="container max-width: 1024px; flex mx-auto overflow-hidden justify-center m-20">
         <div className="grid grid-cols-2 gap-y-10 gap-10">
           <span className="text-center text-neutral font-semibold font-serif text-4xl col-span-full">

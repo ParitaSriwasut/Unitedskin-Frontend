@@ -8,7 +8,7 @@ export default function VideoMockup() {
       <div style={{ backgroundImage: `url(${myBg})` }}>
         <div className="container:w-h-[1100px] flex overflow-hidden justify-center px-20 py-20 mr-18 backdrop-blur-lg">
           <video
-            className="w-h-[1100px]"
+            className="w-h-[900px]"
             // controls
             autoPlay
             muted
