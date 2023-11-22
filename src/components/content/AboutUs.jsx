@@ -3,7 +3,7 @@ import aboutImage from "../../assets/image/about.jpeg";
 export default function AboutUs() {
   return (
     <div className="bg-gray">
-      <div className="container max-width: 1024px; flex mx-auto overflow-hidden justify-center m-40">
+      <div className="container max-width: 1024px; flex mx-auto overflow-hidden justify-center m-20">
         <div className="grid grid-cols-2 gap-y-10 gap-10">
           <span className="text-center text-neutral font-semibold font-serif text-4xl col-span-full">
             Why Organic Skin Care Products are Better for You
@@ -35,7 +35,7 @@ export default function AboutUs() {
           <span className="text-neutral text-md font-mono break-words">
             <a className="underline"> Cruelty-free skin care :</a>
             naturally grown ingredients that are free from toxic pesticides and
-            fertilizers, they don't leave a harmful footprint on the planet,
+            fertilizers, they leave a harmful footprint on the planet,
             particularly the soil, water, and air. Natural ingredients are
             powerful but gentle on the skin. Using them helps keep your skin
             balanced and healthy.

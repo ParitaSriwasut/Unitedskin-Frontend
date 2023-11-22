@@ -5,10 +5,16 @@ import { useCart } from "../../contexts/CartContext";
 
 export default function HomeNavbar() {
   const { authUser, logout } = useAuth();
-  const { cart, getCart } = useCart();
+  const { cart, getCart, clearCartData } = useCart();
+
   if (!cart.items) {
     getCart();
   }
+
+  const handleLogout = () => {
+    logout();
+    clearCartData();
+  };
 
   return (
     <div className="bg-neutral">
@@ -82,7 +88,7 @@ export default function HomeNavbar() {
               <Link
                 to="/"
                 className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-lg px-3 "
-                onClick={logout}
+                onClick={handleLogout}
               >
                 Log out
               </Link>

@@ -9,8 +9,6 @@ import AboutUs from "./AboutUs";
 export default function Category() {
   return (
     <div className="flex flex-col">
-      <VideoMockup />
-
       <div className="flex justify-center items-center">
         <div className="2xl:mx-auto 2xl:container py-12 px-4 sm:px-6 xl:px-20 2xl:px-0 w-full">
           <div className="flex flex-col justify-center items-center space-y-10">
@@ -76,6 +74,7 @@ export default function Category() {
           </div>
         </div>
       </div>
+      <VideoMockup />
       <AboutUs />
     </div>
   );

@@ -54,7 +54,7 @@ export function Checkout(
 
         <button
           type="submit"
-          className="bg-teal hover:bg-red-600 px-3 py-1 text-sm text-white uppercase"
+          className=" flex  justify-center bg-teal hover:bg-red-600 px-3 py-4 text-sm text-white items-center uppercase"
         >
           Order
         </button>

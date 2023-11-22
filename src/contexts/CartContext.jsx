@@ -1,5 +1,6 @@
 import { createContext, useState, useContext } from "react";
 import axios from "../configs/axios";
+import { toast } from "react-toastify";
 
 // Create a CartContext
 const CartContext = createContext();
@@ -24,7 +25,6 @@ export default function CartContextProvider({ children }) {
     }
     callAPI();
   };
-
   const getCart = () => {
     async function fetchItems() {
       const response = await axios.get("/cart");
@@ -39,7 +39,6 @@ export default function CartContextProvider({ children }) {
     }
     fetchItems();
   };
-
   const deleteFromCart = (productId) => {
     async function callAPI() {
       const response = await axios.post("/cart/delete-from-cart", {
@@ -104,8 +103,13 @@ export default function CartContextProvider({ children }) {
 
       getCart();
     } catch (error) {
-      console.error("Error increasing/decreasing product:", error);
+      toast.error("Error increasing/decreasing product:", error);
     }
+  };
+
+  // used just to get rid of context data when user logout.
+  const clearCartData = () => {
+    setCart([]);
   };
 
   return (
@@ -118,6 +122,7 @@ export default function CartContextProvider({ children }) {
         handleInc,
         handleDec,
         increaseDecreaseProduct,
+        clearCartData,
       }}
     >
       {children}
