@@ -41,7 +41,7 @@ export default function AboutUs() {
             balanced and healthy.
           </span>
           <img src={aboutImage} alt="skincare" />
-          <div className="flex flex-col gap-14">
+          <div className="flex flex-col gap-20">
             <span className="text-neutral text-2xl font-serif break-words tracking-wide leading-loose">
               “What is your skin trying to tell you? Often the skin is a
               metaphor for deeper issues and a way for your body to send up a
@@ -50,11 +50,11 @@ export default function AboutUs() {
               of our bodies and is often a sign of poor elimination of toxins
               and waste products.”
             </span>
-            <div className="flex flex-col gap-6">
-              <span className="text-neutral text-xl font-mono">
+            <div className="flex flex-col gap-10">
+              <span className="text-neutral text-2xl font-serif">
                 How’s your skin feeling today?
               </span>
-              <span className="text-neutral text-3xl font-mono">
+              <span className="text-neutral text-3xl font-serif font-bold">
                 UNITED & FREE ORGANIC SKINCARE
               </span>
             </div>
