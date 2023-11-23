@@ -5,9 +5,12 @@ import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import { useCart } from "../contexts/CartContext";
 import { useAuth } from "../hooks/use-auth";
+import { useNavigate } from "react-router-dom";
 
 export function ProductDetailContainer() {
   const { id } = useParams();
+
+  let navigate = useNavigate();
 
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -45,7 +48,8 @@ export function ProductDetailContainer() {
 
     if (deleted) {
       alert("Delete product successfully!");
-      window.location.replace("/products");
+      // window.location.replace("/products");
+      navigate("/products");
     } else {
       alert("Delete product failed! " + reason);
     }

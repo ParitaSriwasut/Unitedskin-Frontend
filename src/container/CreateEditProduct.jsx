@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import axios from "../configs/axios";
 import CreateEditProduct from "../components/Product/CreateEditProduct";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function CreateEditProductContainer() {
+  const navigate = useNavigate();
+
   const { id } = useParams();
 
   const [productName, setProductName] = useState("");
@@ -69,11 +72,8 @@ export function CreateEditProductContainer() {
       if (!response.status === 200) {
         throw new Error("Network response was not 200");
       }
-      alert("Product uploaded successfully!");
 
-      if (!id) {
-        window.location.replace("/admin/product/" + response.body.product.id);
-      }
+      navigate("/products/" + response.data.product.id);
     } catch (err) {
       console.log(err);
     }

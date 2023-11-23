@@ -108,7 +108,7 @@ export default function CreateEditProduct({
 
 function CreateButton({ children }) {
   return (
-    <button className="bg-orange2 text-black rounded-lg text-xl font-semibold py-2 px-20">
+    <button className="bg-orange2 text-black rounded-lg text-xl font-semibold py-2 px-10">
       {children}
     </button>
   );

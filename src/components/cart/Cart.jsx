@@ -87,7 +87,7 @@ export default function CartComponent({ items, total, deleteFromCart }) {
                     ${item.product.productPrice}
                   </span>
                   <span className="text-center w-1/5 font-semibold text-sm">
-                    ${total.toFixed(2)}
+                    ${item.product.productPrice * item.quantity}
                   </span>
                 </div>
               );
