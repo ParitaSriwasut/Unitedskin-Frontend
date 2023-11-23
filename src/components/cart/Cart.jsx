@@ -6,8 +6,8 @@ export default function CartComponent({ items, total, deleteFromCart }) {
 
   return (
     <>
-      <div className="container mx-auto mt-10 flex justify-center items-center">
-        <div className="w-3/4 shadow-xl my-10 flex-wrap">
+      <div className="container mx-auto mt-10">
+        <div className="w-3/4 shadow-md my-10 flex-wrap">
           <div className="bg-white px-10 py-1">
             <div className="flex justify-between border-b pb-8">
               <h1 className="font-semibold text-2xl">Shopping Cart</h1>
@@ -37,13 +37,13 @@ export default function CartComponent({ items, total, deleteFromCart }) {
                     <div className="w-20">
                       <img
                         className="h-24"
-                        src={item.image}
-                        alt={item.product.name}
+                        src={item.product.image}
+                        alt={item.product.productName}
                       />
                     </div>
                     <div className="flex flex-col justify-between ml-4 flex-grow">
                       <span className="font-bold text-sm">
-                        {item.product.name}
+                        {item.product.productName}
                       </span>
                       <span className="text-red-500 text-xs capitalize">
                         {item.product.categoryName}
@@ -129,10 +129,10 @@ export default function CartComponent({ items, total, deleteFromCart }) {
                 type="text"
                 id="coupon"
                 placeholder="Enter your coupon"
-                className="p-4 text-sm w-full"
+                className="p-2 text-sm w-full"
               />
             </div>
-            <button className="bg-teal hover:bg-neutral2 px-5 py-3 font-semibold text-sm text-black rounded-md uppercase">
+            <button className="bg-teal hover:bg-red-600 px-3 py-1 text-sm text-white uppercase">
               Apply
             </button>
             <div className="border-t mt-8">
@@ -142,9 +142,9 @@ export default function CartComponent({ items, total, deleteFromCart }) {
               </div>
               <Link
                 to="/checkout"
-                className="bg-orange2 font-semibold hover:bg-orange px-5 py-3 text-sm rounded-md text-black uppercase w-full"
+                className="bg-orange2 font-semibold hover-bg-indigo-600 py-3 p-2 text-sm text-orange uppercase w-full"
               >
-                Process to payment
+                Order now
               </Link>
             </div>
           </div>

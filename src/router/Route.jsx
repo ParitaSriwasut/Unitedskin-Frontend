@@ -41,6 +41,18 @@ const router = createBrowserRouter([
       { path: "/checkout", element: <Checkout /> },
       { path: "/orders", element: <OrderList /> },
       { path: "/orders/payment/:id", element: <OrderSummary /> },
+      {
+        path: "/admin/product",
+        element: <CreateProduct />,
+      },
+      {
+        path: "/admin/product/:id",
+        element: <CreateProduct />,
+      },
+      {
+        path: "/admin/orders/payments",
+        element: <AdminOrderSummaryPage />,
+      },
     ],
   },
   {
@@ -50,18 +62,6 @@ const router = createBrowserRouter([
         <Login />
       </RedirectIfAuthenticated>
     ),
-  },
-  {
-    path: "/admin/product",
-    element: <CreateProduct />,
-  },
-  {
-    path: "/admin/product/:id",
-    element: <CreateProduct />,
-  },
-  {
-    path: "/admin/orders/payments",
-    element: <AdminOrderSummaryPage />,
   },
 ]);
 

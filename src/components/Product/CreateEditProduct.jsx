@@ -1,4 +1,4 @@
-import HomeNavbar from "../navbar/HomeNavbar";
+//import HomeNavbar from "../navbar/HomeNavbar";
 
 export default function CreateEditProduct({
   handleProductNameChange,
@@ -17,7 +17,6 @@ export default function CreateEditProduct({
 }) {
   return (
     <section className="bg-green">
-      <HomeNavbar />
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
         <h2 className="mb-4 text-4xl font-semibold justify-items-center text-white dark:text-white">
           Add a new product by Admin

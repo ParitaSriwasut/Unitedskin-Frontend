@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 import myLogo from "../../assets/logo/Logo-2.png";
 import { useAuth } from "../../hooks/use-auth";
 import { useCart } from "../../contexts/CartContext";
+import { useState } from "react";
 
 export default function HomeNavbar() {
   const { authUser, logout } = useAuth();
   const { cart, getCart, clearCartData } = useCart();
+
+  const [showDropdown, setShowDropdown] = useState(false);
 
   if (!cart.items) {
     getCart();
@@ -23,114 +26,28 @@ export default function HomeNavbar() {
           <Link to="/" className="flex items-center">
             <img className="h-9" src={myLogo} alt="logo" />
           </Link>
-          <ul className="hidden md:flex space-x-12">
-            <li>
-              <Link
-                to="/"
-                className="flex text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/category"
-                className=" flex text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2 "
-              >
-                Category
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/orders"
-                className=" flex text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2 "
-              >
-                Orders
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className=" flex text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2 "
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className="flex flex-row text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2 "
-              >
-                Contact Us
-              </Link>
-            </li>
-          </ul>
 
-          <div className="flex items-center lg:order-2">
-            {authUser ? (
-              <Link
-                to="/"
-                className="flex flex-row text-white focus:ring-2  focus:ring-white focus:border-white rounded-xl text-lg px-3 py-2 "
-              >
-                Hello {authUser.name} {authUser.isAdmin && "(Admin)"}
-              </Link>
-            ) : (
-              <Link
-                to="/login"
-                className=" flex flex-row text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-3 py-2 "
-              >
-                Log in
-              </Link>
-            )}
-
-            {authUser && authUser.isAdmin && (
-              <Link
-                to="/admin/product"
-                className="flex flex-row text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-3  "
-              >
-                Add Product
-              </Link>
-            )}
-
-            {authUser && authUser.isAdmin && (
-              <Link
-                to="/admin/orders/payments"
-                className="flex flex-row text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-3  "
-              >
-                Order Summary
-              </Link>
-            )}
-
-            {authUser ? (
-              <Link
-                to="/"
-                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-lg px-3 "
-                onClick={handleLogout}
-              >
-                Log out
-              </Link>
-            ) : (
-              <div></div>
-            )}
-          </div>
-
-          <div className="xl:flex space-x-5 items-center">
-            <Link to="#">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="white"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-                />
-              </svg>
+          <div className="flex items-center space-x-4">
+            <Link
+              to="/category"
+              className="text-white rounded-xl text-lg px-2 py-2"
+            >
+              Category
             </Link>
+            <Link
+              to="/orders"
+              className="text-white rounded-xl text-lg px-2 py-2"
+            >
+              Orders
+            </Link>
+            <Link
+              to="/products"
+              className="text-white rounded-xl text-lg px-2 py-2"
+            >
+              Products
+            </Link>
+
+            {/* Cart Icon */}
             <Link to="/cart">
               <div className="relative">
                 <svg
@@ -155,31 +72,45 @@ export default function HomeNavbar() {
                   </div>
                 )}
               </div>
+            </Link>
 
-              {/* {cart.items && cart.items.length > 0 ? (
-                <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">
-                  {cart.items.length}
-                </span>
-              ) : (
-                <span></span>
-              )} */}
-            </Link>
-            <Link to="#">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="white"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </Link>
+            {/* User Dropdown */}
+            {authUser && (
+              <div className="relative">
+                <button
+                  className="text-white rounded-xl text-lg px-2 py-2"
+                  onClick={() => setShowDropdown(!showDropdown)}
+                >
+                  Hello {authUser.name} {authUser.isAdmin && "(Admin)"}
+                </button>
+                {showDropdown && (
+                  <div className="absolute right-0 mt-2 bg-white rounded-md shadow-lg overflow-hidden z-20">
+                    {authUser.isAdmin && (
+                      <>
+                        <Link
+                          to="/admin/product"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          Add Product
+                        </Link>
+                        <Link
+                          to="/admin/orders/payments"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          Order Summary
+                        </Link>
+                      </>
+                    )}
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={handleLogout}
+                    >
+                      Log out
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </nav>
       </div>

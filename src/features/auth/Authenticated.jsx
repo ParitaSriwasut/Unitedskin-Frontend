@@ -1,10 +1,8 @@
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../../hooks/use-auth";
+import { getAccessToken } from "../../utils/local-storage";
 
 export default function Authenticated({ children }) {
-  const { authUser } = useAuth();
-
-  if (!authUser) {
+  if (!getAccessToken()) {
     return <Navigate to="/welcome" />;
   }
   return children;
