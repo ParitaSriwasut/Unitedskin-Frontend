@@ -42,6 +42,14 @@ export default function HomeNavbar() {
             </li>
             <li>
               <Link
+                to="/orders"
+                className=" flex text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2 "
+              >
+                Orders
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/about"
                 className=" flex text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-2 py-2 "
               >
@@ -84,10 +92,19 @@ export default function HomeNavbar() {
               </Link>
             )}
 
+            {authUser && authUser.isAdmin && (
+              <Link
+                to="/admin/orders/payments"
+                className="flex flex-row text-white focus:ring-2 focus:ring-white focus:border-white rounded-xl text-lg px-3  "
+              >
+                Order Summary
+              </Link>
+            )}
+
             {authUser ? (
               <Link
                 to="/"
-                className="text-white focus:ring-2 focus:ring-white focus:border-white rounded-lg text-lg px-3 "
+                className="text-white focus:ring-2 focus:ring-green focus:border-green rounded-lg text-lg px-3 "
                 onClick={handleLogout}
               >
                 Log out

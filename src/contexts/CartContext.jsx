@@ -1,6 +1,5 @@
 import { createContext, useState, useContext } from "react";
 import axios from "../configs/axios";
-import { toast } from "react-toastify";
 
 // Create a CartContext
 const CartContext = createContext();
@@ -103,7 +102,7 @@ export default function CartContextProvider({ children }) {
 
       getCart();
     } catch (error) {
-      toast.error("Error increasing/decreasing product:", error);
+      console.error("Error increasing/decreasing product:", error);
     }
   };
 
