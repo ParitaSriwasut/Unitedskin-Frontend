@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import WelcomePage from "../pages/WelcomePage";
 import HomeLayout from "../layout/HomeLayout";
 import RedirectIfAuthenticated from "../features/auth/RedirectIfAuthenticated";
+import RedirectIfAdmin from "../features/auth/RedirectIfAdmin";
 import Authenticated from "../features/auth/Authenticated";
 import Home from "../pages/Home";
 import Cart from "../pages/Cart";
@@ -43,15 +44,27 @@ const router = createBrowserRouter([
       { path: "/orders/payment/:id", element: <OrderSummary /> },
       {
         path: "/admin/product",
-        element: <CreateProduct />,
+        element: (
+          <RedirectIfAdmin>
+            <CreateProduct />,
+          </RedirectIfAdmin>
+        ),
       },
       {
         path: "/admin/product/:id",
-        element: <CreateProduct />,
+        element: (
+          <RedirectIfAdmin>
+            <CreateProduct />,
+          </RedirectIfAdmin>
+        ),
       },
       {
         path: "/admin/orders/payments",
-        element: <AdminOrderSummaryPage />,
+        element: (
+          <RedirectIfAdmin>
+            <AdminOrderSummaryPage />,
+          </RedirectIfAdmin>
+        ),
       },
     ],
   },
