@@ -13,7 +13,7 @@ export function AdminOrderSummaryContainer() {
     setLoading(true);
     const response = await axios.get("/orders/payments?status=" + status);
     if (!response.status === 200) {
-      throw new Error("Network response was not 200");
+      throw new Error("Network response was not correct 200");
     }
 
     const data = response.data;
@@ -33,7 +33,7 @@ export function AdminOrderSummaryContainer() {
       status,
     });
     if (!response.status === 200) {
-      throw new Error("Network response was not 200");
+      throw new Error("Network response was not correct 200");
     }
 
     fetchOrderSummary(filterStatus);

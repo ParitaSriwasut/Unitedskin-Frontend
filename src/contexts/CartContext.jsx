@@ -55,6 +55,7 @@ export default function CartContextProvider({ children }) {
     callAPI();
   };
 
+  //still need to fix
   const handleInc = (productId) => {
     async function callAPI() {
       const response = await axios.patch("/cart/increase-from-cart", {
