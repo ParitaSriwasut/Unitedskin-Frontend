@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function OrderList({ orders }) {
   return (
-    <div className="container mx-auto mt-10">
+    <div className="container mx-auto mt-10  items-center justify-center">
       <div className="w-3/4 shadow-md my-10">
         <div className="bg-white px-10 py-1">
           <div className="flex justify-between border-b pb-8">
