@@ -33,7 +33,6 @@ const router = createBrowserRouter([
     ),
     children: [
       { path: "/", element: <Home /> },
-      { path: "/register", element: <Register /> },
       { path: "/category", element: <Category /> },
       { path: "/about", element: <AboutUs /> },
       { path: "/cart", element: <Cart /> },
@@ -73,6 +72,14 @@ const router = createBrowserRouter([
     element: (
       <RedirectIfAuthenticated>
         <Login />
+      </RedirectIfAuthenticated>
+    ),
+  },
+  {
+    path: "/register",
+    element: (
+      <RedirectIfAuthenticated>
+        <Register />
       </RedirectIfAuthenticated>
     ),
   },

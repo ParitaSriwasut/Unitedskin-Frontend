@@ -13,11 +13,11 @@ export default function WelcomePage() {
             {/* need to set Route */}
             <div className="text-orange text-8xl font-semibold flex gap-7">
               unitedskin.in
-              <Link to="/" className="flex items-center">
+              {/* <Link to="/about" className="flex items-center">
                 <button className="bg-white relative font-semibold text-green z-10 text-xl mt-10 mb-5 py-2 px-3 hover:bg-rose outline-double outline-3 outline-offset-2 truncate">
                   OUR STORE
                 </button>
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div>
