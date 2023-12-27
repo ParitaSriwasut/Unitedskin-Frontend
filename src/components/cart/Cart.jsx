@@ -132,7 +132,7 @@ export default function CartComponent({ items, total, deleteFromCart }) {
                 className="p-2 text-sm w-full"
               />
             </div>
-            <button className="bg-teal hover:bg-red-600 px-3 py-1 text-sm text-white uppercase">
+            <button className="bg-teal2 px-3 py-2 text-sm text-white uppercase rounded-full">
               Apply
             </button>
             <div className="border-t mt-8">
@@ -142,7 +142,7 @@ export default function CartComponent({ items, total, deleteFromCart }) {
               </div>
               <Link
                 to="/checkout"
-                className="bg-orange2 font-semibold hover-bg-indigo-600 py-3 p-2 text-sm text-orange uppercase w-full"
+                className="bg-orange2 font-semibold py-3 p-2 text-sm text-white uppercase w-full rounded-full"
               >
                 Order now
               </Link>

@@ -48,7 +48,7 @@ export default function ProductDetail({
                   </div>
 
                   {isAdminUser && (
-                    <div className="mt-4">
+                    <div className="mt-4 gap-20">
                       <Link to={`/admin/product/${product.id}`}>
                         <button className="bg-green text-white py-2 px-6 rounded-full">
                           <i style={{ color: "#78716c" }}></i> Edit
@@ -56,7 +56,7 @@ export default function ProductDetail({
                       </Link>
 
                       <button
-                        className="bg-green text-white py-2 px-6 rounded-full"
+                        className="bg-green text-white py-2 px-6 ml-4 rounded-full"
                         onClick={adminDeleteHandler}
                       >
                         <i style={{ color: "#78716c" }}></i> Delete

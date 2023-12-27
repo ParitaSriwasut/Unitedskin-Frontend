@@ -9,7 +9,7 @@ export default function AboutUs() {
             Why Organic Skin Care Products are Better for You
           </span>
           <span className="text-neutral text-md font-mono break-words">
-            <a className="underline">5 Years of Experience :</a>
+            <a className="underline mr-2">5 Years of Experience</a>
             Giving the best instructions. Nature is the best source of
             skin-nourishing ingredients. Vitamins, minerals, and antioxidants
             are all found in natural, plant-based sources and work
@@ -17,7 +17,7 @@ export default function AboutUs() {
             radiant.
           </span>
           <span className="text-neutral text-md font-mono break-words">
-            <a className="underline">Organic work better :</a>
+            <a className="underline mr-2">Organic work better</a>
             Plants grown organically are found to contain a higher level of
             vital antioxidant vitamins than non-organic plants. Because they are
             grown without herbicides. their organic ingredients are also free
@@ -25,7 +25,7 @@ export default function AboutUs() {
             body.
           </span>
           <span className="text-neutral text-md font-mono break-words">
-            <a className="underline">Happy clients :</a>
+            <a className="underline mr-2">Happy clients</a>
             Without harsh chemicals, organic skin care products are less likely
             to cause allergic reactions, inflammations or irritations. What’s
             more, they could be dangerous for your overall health. Using organic
@@ -33,7 +33,7 @@ export default function AboutUs() {
             which means better skin health.
           </span>
           <span className="text-neutral text-md font-mono break-words">
-            <a className="underline"> Cruelty-free skin care :</a>
+            <a className="underline mr-2"> Cruelty-free skin care</a>
             naturally grown ingredients that are free from toxic pesticides and
             fertilizers, they leave a harmful footprint on the planet,
             particularly the soil, water, and air. Natural ingredients are
