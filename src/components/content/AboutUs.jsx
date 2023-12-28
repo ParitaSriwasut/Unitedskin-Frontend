@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import aboutImage from "../../assets/image/about.jpeg";
 
 export default function AboutUs() {
@@ -57,6 +58,11 @@ export default function AboutUs() {
               <span className="text-neutral text-3xl font-serif font-bold">
                 UNITED & FREE ORGANIC SKINCARE
               </span>
+              <Link to="/" className="flex items-center">
+                <button className="bg-white relative font-semibold z-10 text-xl mt-10 mb-5 py-2 px-3 hover:bg-gray outline-dashed truncate animate-bounce">
+                  Let's get to know us!
+                </button>
+              </Link>
             </div>
           </div>
         </div>

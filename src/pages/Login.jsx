@@ -44,11 +44,6 @@ export default function Login() {
                 log in
               </button>
             </div>
-            <div>
-              <span className="text-gray-400 pt-3 flex justify-center">
-                already a member? login here
-              </span>
-            </div>
           </form>
         </div>
       </div>

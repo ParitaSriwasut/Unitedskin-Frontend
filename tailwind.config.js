@@ -20,7 +20,6 @@ export default {
       teal: "rgb(17 94 89)",
       teal2: "rgb(4 47 46)",
       red: "#991b1b",
-      blue: "#06b6d4",
       stone: "#78716c",
       orange2: "#FF9209",
     },

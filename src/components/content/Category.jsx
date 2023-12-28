@@ -22,11 +22,11 @@ export default function Category() {
               <Link to="/products?categoryName=WOMEN">
                 <div className="group flex-col justify-center items-center h-full w-full hidden lg:flex">
                   <img
-                    className="object-center object-cover h-full w-full"
+                    className="object-center object-cover h-full w-full hover:opacity-75"
                     src={womenSkincare}
                     alt="girl-image"
                   />
-                  <button className="bg-neutral text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray z-10  text-xl text-bold leading-none py-3 w-36 mt-5 ">
+                  <button className="bg-neutral text-white hover:bg-neutral4 z-10 text-xl text-bold leading-none py-3 w-36 mt-5 transition duration-300 ease-in-out">
                     Women
                   </button>
                 </div>
@@ -35,11 +35,11 @@ export default function Category() {
               <Link to="/products?categoryName=WOMEN">
                 <div className="group flex-col justify-center items-center h-full w-full hidden lg:flex">
                   <img
-                    className="object-center object-cover h-full w-full"
+                    className="object-center object-cover h-full w-full hover:opacity-75"
                     src={myKids}
                     alt="kids-image"
                   />
-                  <button className="bg-neutral text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 text-xl text-bold leading-none py-3 w-36 mt-5">
+                  <button className="bg-neutral text-white hover:bg-neutral4 bottom-4 z-10 text-xl text-bold leading-none py-3 w-36 mt-5 transition duration-300 ease-in-out">
                     Kids
                   </button>
                 </div>
@@ -48,11 +48,11 @@ export default function Category() {
               <Link to="/products?categoryName=UNISEX">
                 <div className="group flex-col justify-center items-center h-full w-full hidden lg:flex">
                   <img
-                    className="object-center object-cover h-full w-full"
+                    className="object-center object-cover h-full w-full hover:opacity-75"
                     src={unisex}
                     alt="unisex-image"
                   />
-                  <button className="bg-neutral text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray bottom-4 z-10   text-xl text-bold leading-none py-3 w-36 mt-5">
+                  <button className="bg-neutral text-white hover:bg-neutral4 z-10 text-xl text-bold leading-none py-3 w-36 mt-5 transition duration-300 ease-in-out">
                     Unisex
                   </button>
                 </div>
@@ -61,11 +61,11 @@ export default function Category() {
               <Link to="/products?categoryName=MEN">
                 <div className="group flex-col justify-center items-center h-full w-full hidden lg:flex">
                   <img
-                    className="object-center object-cover h-full w-full"
+                    className="object-center object-cover h-full w-full hover:opacity-75"
                     src={menSkincare}
                     alt="men-image"
                   />
-                  <button className="bg-neutral text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10  text-xl text-bold leading-none py-3 w-36 mt-5">
+                  <button className="bg-neutral text-white hover:bg-neutral4 bottom-4 z-10  text-xl text-bold leading-none py-3 w-36 mt-5 transition duration-300 ease-in-out">
                     Men
                   </button>
                 </div>

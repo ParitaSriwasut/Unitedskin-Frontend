@@ -84,25 +84,25 @@ export default function HomeNavbar() {
                   Hello {authUser.name} {authUser.isAdmin && "(Admin)"}
                 </button>
                 {showDropdown && (
-                  <div className="absolute right-0 mt-2 bg-white rounded-md shadow-lg overflow-hidden z-20">
+                  <div className="absolute right-0 z-10 mt-2 w-44 origin-top-right bg-neutral4 rounded-md shadow-lg overflow-hidden focus:outline-none">
                     {authUser.isAdmin && (
                       <>
                         <Link
                           to="/admin/product"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-md text-neutral hover:bg-gray"
                         >
                           Add Product
                         </Link>
                         <Link
                           to="/admin/orders/payments"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-md text-neutral hover:bg-gray"
                         >
                           Order Summary
                         </Link>
                       </>
                     )}
                     <button
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block w-full px-4 py-2 text-left text-md text-neutral hover:bg-gray"
                       onClick={handleLogout}
                     >
                       Log out
