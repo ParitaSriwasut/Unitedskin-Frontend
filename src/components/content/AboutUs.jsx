@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import aboutImage from "../../assets/image/about.jpeg";
+import Gallery from "../Gallery";
 
 export default function AboutUs() {
   return (
     <div className="bg-white">
+      <Gallery />
       <div className="container max-width: 1024px; flex mx-auto overflow-hidden justify-center m-20">
         <div className="grid grid-cols-2 gap-y-10 gap-10">
           <span className="text-center text-neutral font-semibold font-serif text-4xl col-span-full">
@@ -58,9 +60,9 @@ export default function AboutUs() {
               <span className="text-neutral text-3xl font-serif font-bold">
                 UNITED & FREE ORGANIC SKINCARE
               </span>
-              <Link to="/" className="flex items-center">
+              <Link to="/register" className="flex items-center">
                 <button className="bg-white relative font-semibold z-10 text-xl mt-10 mb-5 py-2 px-3 hover:bg-gray outline-dashed truncate animate-bounce">
-                  Let's get to know us!
+                  Sign up now to get to know us!
                 </button>
               </Link>
             </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 // import { toast } from 'react-toastify';
 import myImage from "../images/login-2.png";
 import LoginInput from "../features/auth/LoginInput";
+import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/use-auth";
 import { useNavigate } from "react-router-dom";
 
@@ -43,6 +44,17 @@ export default function Login() {
               <button className="bg-green text-orange rounded-lg text-md font-semibold py-2 px-20 ">
                 log in
               </button>
+            </div>
+            <div className="flex flex-row justify-center items-center">
+              <span className="text-neutral pt-3 flex flex-col justify-center">
+                Create a member?
+              </span>
+              <Link
+                to="/register"
+                className=" text-neutral pt-3 flex font-bold animate-pulse justify-center ml-4"
+              >
+                Register here
+              </Link>
             </div>
           </form>
         </div>
