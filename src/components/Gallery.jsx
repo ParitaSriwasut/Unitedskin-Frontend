@@ -3,12 +3,8 @@ import a from "../assets/image/a.jpeg";
 import bb from "../assets/image/bb.jpeg";
 import b from "../assets/image/b.jpeg";
 import c from "../assets/image/c.png";
-import d from "../assets/image/d.png";
-import e from "../assets/image/e.jpeg";
-import f from "../assets/image/f.jpeg";
+import s from "../assets/image/s.jpeg";
 import g from "../assets/image/g.jpeg";
-import h from "../assets/image/h.jpeg";
-import i from "../assets/image/i.jpeg";
 import j from "../assets/image/j.jpeg";
 import l from "../assets/image/l.jpeg";
 import m from "../assets/image/m.jpeg";
@@ -18,7 +14,7 @@ import p from "../assets/image/p.jpeg";
 import pp from "../assets/image/pp.jpeg";
 import q from "../assets/image/q.jpeg";
 import r from "../assets/image/r.jpeg";
-import s from "../assets/image/s.jpeg";
+import e from "../assets/image/e.jpeg";
 
 const Gallery = () => {
   return (
@@ -33,12 +29,8 @@ const Gallery = () => {
         <img src={bb} alt="Skincare pics" className="mt-8" />
         <img src={b} alt="Skincare pics" className="mt-8" />
         <img src={c} alt="Skincare pics" className="mt-8" />
-        <img src={d} alt="Skincare pics" className="mt-8" />
-        <img src={e} alt="Skincare pics" className="mt-8" />
-        <img src={f} alt="Skincare pics" className="mt-8" />
+        <img src={l} alt="Skincare pics" className="mt-8" />
         <img src={g} alt="Skincare pics" className="mt-8" />
-        <img src={h} alt="Skincare pics" className="mt-8" />
-        <img src={i} alt="Skincare pics" className="mt-8" />
         <img src={j} alt="Skincare pics" className="mt-8" />
         <img src={m} alt="Skincare pics" className="mt-8" />
         <img src={n} alt="Skincare pics" className="mt-8" />
@@ -48,7 +40,7 @@ const Gallery = () => {
         <img src={r} alt="Skincare pics" className="mt-8" />
         <img src={s} alt="Skincare pics" className="mt-8" />
         <img src={pp} alt="Skincare pics" className="mt-8" />
-        <img src={l} alt="Skincare pics" className="mt-8" />
+        <img src={e} alt="Skincare pics" className="mt-8" />
       </div>
     </div>
   );
