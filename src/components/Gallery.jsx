@@ -25,22 +25,86 @@ const Gallery = () => {
         </h1>
       </div>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 lg:grid-cols-4">
-        <img src={a} alt="Skincare pics" className="mt-8" />
-        <img src={bb} alt="Skincare pics" className="mt-8" />
-        <img src={b} alt="Skincare pics" className="mt-8" />
-        <img src={c} alt="Skincare pics" className="mt-8" />
-        <img src={l} alt="Skincare pics" className="mt-8" />
-        <img src={g} alt="Skincare pics" className="mt-8" />
-        <img src={j} alt="Skincare pics" className="mt-8" />
-        <img src={m} alt="Skincare pics" className="mt-8" />
-        <img src={n} alt="Skincare pics" className="mt-8" />
-        <img src={o} alt="Skincare pics" className="mt-8" />
-        <img src={p} alt="Skincare pics" className="mt-8" />
-        <img src={q} alt="Skincare pics" className="mt-8" />
-        <img src={r} alt="Skincare pics" className="mt-8" />
-        <img src={s} alt="Skincare pics" className="mt-8" />
-        <img src={pp} alt="Skincare pics" className="mt-8" />
-        <img src={e} alt="Skincare pics" className="mt-8" />
+        <img
+          src={a}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={bb}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={b}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={c}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={l}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={g}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={j}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={m}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={n}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={o}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={p}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={q}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={r}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={s}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={pp}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
+        <img
+          src={e}
+          alt="Skincare pics"
+          className="mt-mt-8 w-full h-auto max-h-[380px]"
+        />
       </div>
     </div>
   );

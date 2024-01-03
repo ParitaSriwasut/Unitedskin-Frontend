@@ -47,7 +47,7 @@ export default function Login() {
             </div>
             <div className="flex flex-row justify-center items-center">
               <span className="text-neutral pt-3 flex flex-col justify-center">
-                Create a member?
+                create a member?
               </span>
               <Link
                 to="/register"
