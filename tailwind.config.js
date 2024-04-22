@@ -22,6 +22,7 @@ export default {
       red: "#991b1b",
       stone: "#78716c",
       orange2: "#FF9209",
+      orange3: "#FF6D00",
     },
   },
   plugins: [],

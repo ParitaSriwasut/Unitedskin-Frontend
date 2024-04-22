@@ -11,9 +11,20 @@ export function CheckoutContainer() {
   if (!cart.items) {
     getCart();
   }
+
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(""); 
   const [address, setAddress] = useState("");
   const [file, setFile] = useState(null);
   const [previewSrc, setPreviewSrc] = useState("");
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handlePhoneNumberChange = (e) => {
+    setPhoneNumber(e.target.value);
+  };
 
   const handleAddressChange = (e) => {
     setAddress(e.target.value);
@@ -33,6 +44,8 @@ export function CheckoutContainer() {
     e.preventDefault();
 
     const formData = {
+      name,
+      phoneNumber,
       address,
       file: file,
     };
@@ -56,17 +69,20 @@ export function CheckoutContainer() {
 
       navigate("/orders/payment/" + response.data.paymentId);
     } catch (err) {
-      console.log(err);
+      console.error(err);
+      alert("Failed to create order");
     }
 
     // refresh the cart.
     getCart();
   };
 
-  return Checkout(
+  return Checkout({
     handleSubmit,
+    handleNameChange,
+    handlePhoneNumberChange,
     handleAddressChange,
     handleFileChange,
     previewSrc
-  );
+});
 }
